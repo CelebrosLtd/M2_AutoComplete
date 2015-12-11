@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <celebros_autocomplete>
+            <general>
+                <enabled>1</enabled>
+                <frontend_address>212.29.229.105</frontend_address>
+                <scriptserver_address>212.29.229.105</scriptserver_address>
+            </general>
+        </celebros_autocomplete>
+    </default>
+</config>
