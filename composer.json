@@ -1,7 +1,6 @@
 {
-    "name": "belvg/module-autocomplete",
+    "name": "celebros/module-autocomplete",
     "description": "Add autocomplete to searchbox",
-    "homepage": "http://www.celebros.com/",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
@@ -9,8 +8,7 @@
         "AFL-3.0"
     ],
     "require": {
-        "php": "~5.5.0|~5.6.0",
-        "magento/framework": "~1.0.0"
+        "php": "~5.5.0|~5.6.0|~7.0.0"
     },
     "autoload": {
         "files": [ "registration.php" ],
