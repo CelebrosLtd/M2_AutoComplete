@@ -4,10 +4,9 @@
         <css src="Celebros_AutoComplete::css/AutoComplete.css" />
     </head>
     <body>
-        <referenceContainer name="head.additional">
+        <referenceContainer name="after.body.start">
             <block class="Magento\Framework\View\Element\Template" name="celebros_conversionpro.external_resources" template="Celebros_AutoComplete::external_resources.phtml" />
         </referenceContainer>
-
         <referenceBlock name="top.search">
             <action method="setTemplate">
                 <argument name="template" xsi:type="string">Celebros_AutoComplete::search/form.mini.phtml</argument>
