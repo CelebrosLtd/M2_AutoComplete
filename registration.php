@@ -9,7 +9,7 @@
  *
  ******************************************************************************
  * @category    Celebros
- * @package     Celebros_Celexport
+ * @package     Celebros_AutoComplete
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,

@@ -1,11 +1,23 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+<!--
+ * Celebros
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish correct extension functionality.
+ * If you wish to customize it, please contact Celebros.
+ *
+ ******************************************************************************
+ * @category    Celebros
+ * @package     Celebros_AutoComplete
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <celebros_autocomplete>
             <general>
-                <enabled>1</enabled>
-                <frontend_address>212.29.229.105</frontend_address>
-                <scriptserver_address>212.29.229.105</scriptserver_address>
+                <enabled>0</enabled>
+                <frontend_address></frontend_address>
+                <scriptserver_address></scriptserver_address>
             </general>
         </celebros_autocomplete>
     </default>
