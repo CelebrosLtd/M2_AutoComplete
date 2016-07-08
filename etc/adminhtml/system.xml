@@ -31,13 +31,35 @@
                     <label>Customer Name</label>
                     <comment><![CDATA[Customer name as defined by Celebros]]></comment>
                 </field>
-                <field id="frontend_address" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="1">
+                <field id="frontend_address" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Frontend Server</label>
                     <comment><![CDATA[Host name / ip of the server on which the AutoComplete front-end resides]]></comment>
                 </field>
-                <field id="scriptserver_address" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="1">
+                <field id="scriptserver_address" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Script Server</label>
                     <comment><![CDATA[Host name / ip of the server on which the AutoComplete content (scripts and styles) website resides. This is typically the same as above.]]></comment>
+                </field>
+                <field id="acversion" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>AC Version</label>
+                    <source_model>Celebros\AutoComplete\Model\Config\Source\Versions</source_model>
+                </field>
+                <field id="ext_css_enabled" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Use External CSS</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ext_css_url" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>External CSS Url</label>
+                    <comment><![CDATA[e.g "uitemplatev3stag.celebros.com/CelebrosAutoComplete.css" (without protocol)]]></comment>
+                    <depends>
+                        <field id="ext_css_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="about" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>About</label>
+                <hide_in_single_store_mode>0</hide_in_single_store_mode>
+                <field id="info" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <frontend_model>Celebros\AutoComplete\Block\System\Config\Form\Field\Info</frontend_model>
                 </field>
             </group>
         </section>

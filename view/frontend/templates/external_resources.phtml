@@ -1,9 +1,0 @@
-<?php $helper = $this->helper('Celebros\AutoComplete\Helper\Data'); ?>
-<?php if ($helper->isEnabled()) : ?>
-<?php foreach ($helper->getExternalJsUrls() as $url) : ?>
-<script type="text/javascript" src="<?php echo $url ?>"></script>
-<?php endforeach ?>
-<?php foreach ($helper->getExternalCssUrls() as $url) : ?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $url ?>"/>
-<?php endforeach ?>
-<?php endif ?>

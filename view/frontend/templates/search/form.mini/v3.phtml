@@ -1,0 +1,46 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+/** @var $celHelper Celebros\AutoComplete\Helper\Data */
+$celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
+?>
+<?php if ($celHelper->isEnabled()): ?>
+    <?php if ($cssUrl = $celHelper->getExternalCssUrl()): ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $celHelper->getProtocol() . '://' . $cssUrl ?>"/>
+    <?php endif; ?>
+<script type="text/javascript">
+require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery.1.7.Celebros.min.js"], function (jQueryCel) {
+    require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery-ui-1.8.13-Celebros.min.js"], function () {
+        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoComplete/Scripts/CelebrosAutoCompleteV3c.js"], function() {
+            CelebrosAutoCompleteV3(
+                "<?php echo $celHelper->getCustomerName()?>",
+                "search",
+                onSelect,
+                "<?php echo $celHelper->getFrontendServerAddress()?>",
+                "<?php echo $celHelper->getScriptServerAddress()?>",
+                {
+                    acShowType: "regular",
+                    btnSearch: "search_button"   
+                }
+            );
+        });
+    });
+});
+function onSelect(aParameter) {
+    if ((aParameter["SelectedURL"] != "") && (aParameter["IsAutoComplete"])) {
+        var sCmp = (aParameter["SelectedURL"].indexOf("?") == -1) ? "?" : "&";
+        window.location = aParameter["SelectedURL"] + sCmp + "cmp=cel" + "&trigger=ac";
+    } else if (window['UITemplateConfigurationMaster'] != undefined) {
+        var e = jQueryCel.Event("keypress");
+        e.which = 13; e.keyCode = 13;
+        jQueryCel('#search').trigger(e);
+        return false; 
+    } else { 
+        var targetLocation = "<?php echo $helper->getResultUrl() ?>?<?php echo $celHelper->getQueryParamName() ?>=" + encodeURIComponent(aParameter["SelectedQuery"]);
+        if (aParameter["IsAutoComplete"].toString().toLowerCase() == "true") targetLocation += "&Trigger=ac";
+        window.location = targetLocation;
+    }
+};
+</script>
+<?php endif ?>

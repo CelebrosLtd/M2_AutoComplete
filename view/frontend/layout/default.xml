@@ -12,17 +12,16 @@
  * @package     Celebros_AutoComplete
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="Celebros_AutoComplete::css/AutoComplete.css" />
-    </head>
     <body>
-        <referenceContainer name="after.body.start">
-            <block class="Magento\Framework\View\Element\Template" name="celebros_conversionpro.external_resources" template="Celebros_AutoComplete::external_resources.phtml" />
-        </referenceContainer>
         <referenceBlock name="top.search">
             <action method="setTemplate">
                 <argument name="template" xsi:type="string">Celebros_AutoComplete::search/form.mini.phtml</argument>
             </action>
+            <block class="Magento\Framework\View\Element\Template" name="celebros.ac.version" as="celebros.ac.version">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="helper" helper="Celebros\AutoComplete\Helper\Data::getVersionTemplate"/>
+                </action>
+            </block>
         </referenceBlock>
     </body>
 </page>
