@@ -12,8 +12,10 @@
  * @package     Celebros_AutoComplete
  */
 namespace Celebros\AutoComplete\Block\System\Config\Form\Field;
+
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Setup\ModuleContextInterface;
+
 class Info extends \Magento\Config\Block\System\Config\Form\Field
 {
     const MODULE_NAME = 'Celebros_AutoComplete';

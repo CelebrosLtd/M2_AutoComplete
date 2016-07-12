@@ -28,9 +28,6 @@ class LayoutLoadBefore implements ObserverInterface
     protected $_helper;
     protected $_layout;
     
-    /**
-     * @param Item $item
-     */
     public function __construct(
         \Magento\Framework\View\Element\Context $context,
         \Celebros\AutoComplete\Helper\Data $celHelper

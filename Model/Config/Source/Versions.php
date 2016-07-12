@@ -16,12 +16,8 @@ namespace Celebros\AutoComplete\Model\Config\Source;
 class Versions implements \Magento\Framework\Option\ArrayInterface
 {
     public $versions = [
-        '2' => [
-            'label' => 'V2'
-        ], 
-        '3' => [
-            'label' => 'V3'
-        ]
+        '2' => ['label' => 'V2'], 
+        '3' => ['label' => 'V3']
     ];
     
     /**
