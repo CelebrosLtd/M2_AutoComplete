@@ -43,7 +43,7 @@ class LayoutLoadBefore implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        if ($this->_helper->isEnabled()) {
+        if ($this->_helper->isEnabled() && $this->_helper->getExternalCssUrl()) {
             $version = $this->_helper->getAcVersion();
             $this->_layout->getUpdate()->addHandle(self::VERSION_HADLE_PREFIX . $version);
         }
