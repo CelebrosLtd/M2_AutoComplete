@@ -10,27 +10,28 @@ $celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
     <div class="block block-content">
         <form class="form minisearch" id="search_mini_form" action="<?php echo $helper->getResultUrl() ?>" method="get">
             <div class="field search">
-                <label class="label" for="search" data-role="minisearch-label">
+                <label class="label" for="search"<?php if (!$celHelper->isEnabled()): ?> data-role="minisearch-label"<?php endif; ?>>
                     <span><?php echo __('Search'); ?></span>
                 </label>
                 <div class="control">
                     <input id="search"
-                           data-mage-init='{"quickSearch":{
-                                "formSelector":"#search_mini_form",
-                                <?php if (!$celHelper->isEnabled()): ?>"url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",<?php endif; ?>
-                                "destinationSelector":"#search_autocomplete"}
-                           }'
-                           type="text"
-                           name="<?php echo $helper->getQueryParamName() ?>"
-                           value="<?php echo $helper->getEscapedQueryText() ?>"
-                           placeholder="<?php echo __('Search entire store here...'); ?>"
-                           class="input-text"
-                           maxlength="<?php echo $helper->getMaxQueryLength();?>"
-                           role="combobox"
-                           aria-haspopup="false"
-                           aria-autocomplete="both"
-                           autocomplete="off"
-                           />
+<?php if (!$celHelper->isEnabled()): ?>
+                        data-mage-init='{"quickSearch":{
+                            "formSelector":"#search_mini_form",
+                            "url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",
+                            "destinationSelector":"#search_autocomplete"}
+                        }'<?php endif; ?>
+                        type="text"
+                        name="<?php echo $helper->getQueryParamName() ?>"
+                        value="<?php echo $helper->getEscapedQueryText() ?>"
+                        placeholder="<?php echo __('Search entire store here...'); ?>"
+                        class="input-text"
+                        maxlength="<?php echo $helper->getMaxQueryLength();?>"
+                        role="combobox"
+                        aria-haspopup="false"
+                        aria-autocomplete="both"
+                        autocomplete="off"
+                    />
                     <div id="search_autocomplete" class="search-autocomplete"></div>
                     <?php echo $block->getChildHtml() ?>
                 </div>
