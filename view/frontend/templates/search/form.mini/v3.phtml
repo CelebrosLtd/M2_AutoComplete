@@ -31,11 +31,6 @@ function onSelect(aParameter) {
     if ((aParameter["SelectedURL"] != "") && (aParameter["IsAutoComplete"])) {
         var sCmp = (aParameter["SelectedURL"].indexOf("?") == -1) ? "?" : "&";
         window.location = aParameter["SelectedURL"] + sCmp + "cmp=cel" + "&trigger=ac";
-    } else if (window['UITemplateConfigurationMaster'] != undefined) {
-        var e = jQueryCel.Event("keypress");
-        e.which = 13; e.keyCode = 13;
-        jQueryCel('#search').trigger(e);
-        return false; 
     } else { 
         var targetLocation = "<?php echo $helper->getResultUrl() ?>?<?php echo $celHelper->getQueryParamName() ?>=" + encodeURIComponent(aParameter["SelectedQuery"]);
         if (aParameter["IsAutoComplete"].toString().toLowerCase() == "true") targetLocation += "&Trigger=ac";
