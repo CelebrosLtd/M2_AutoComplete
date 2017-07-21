@@ -12,7 +12,7 @@ $celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
 <script type="text/javascript">
 require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery.1.7.Celebros.min.js"], function (jQueryCel) {
     require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery-ui-1.8.13-Celebros.min.js"], function () {
-        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoComplete/Scripts/CelebrosAutoCompleteV3c.js"], function() {
+        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoComplete/Scripts/CelebrosAutoCompleteV3d.js"], function() {
             CelebrosAutoCompleteV3(
                 "<?php echo $celHelper->getCustomerName()?>",
                 "search",
@@ -21,7 +21,8 @@ require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/ui
                 "<?php echo $celHelper->getScriptServerAddress()?>",
                 {
                     acShowType: "regular",
-                    btnSearch: "search_button"   
+                    btnSearch: "search_button",
+                    maxControl: "server"                    
                 }
             );
         });
