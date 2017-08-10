@@ -10,9 +10,9 @@ $celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $celHelper->getProtocol() . '://' . $cssUrl ?>"/>
     <?php endif; ?>
 <script type="text/javascript">
-require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery.1.7.Celebros.min.js"], function (jQueryCel) {
-    require(["<?php echo $celHelper->getProtocol() ?>://uitemplatev3.celebros.com/uitemplate/Scripts/jquery-ui-1.8.13-Celebros.min.js"], function () {
-        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoComplete/Scripts/CelebrosAutoCompleteV3d.js"], function() {
+require(["jquery"], function (jQueryCel) {
+    require(["<?php echo $celHelper->getProtocol() ?>://code.jquery.com/ui/1.12.1/jquery-ui.js"], function () {
+        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoComplete/Scripts/CelebrosAutoCompleteV3e.js"], function() {
             CelebrosAutoCompleteV3(
                 "<?php echo $celHelper->getCustomerName()?>",
                 "search",
