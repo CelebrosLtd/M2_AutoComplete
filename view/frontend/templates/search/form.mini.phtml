@@ -10,17 +10,17 @@ $celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
     <div class="block block-content">
         <form class="form minisearch" id="search_mini_form" action="<?php echo $helper->getResultUrl() ?>" method="get">
             <div class="field search">
-                <label class="label" for="search"<?php if (!$celHelper->isEnabled()): ?> data-role="minisearch-label"<?php endif; ?>>
+                <label class="label" for="search" data-role="minisearch-label">
                     <span><?php echo __('Search'); ?></span>
                 </label>
                 <div class="control">
                     <input id="search"
-<?php if (!$celHelper->isEnabled()): ?>
                         data-mage-init='{"quickSearch":{
                             "formSelector":"#search_mini_form",
-                            "url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",
+                            "url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",<?php if ($celHelper->isEnabled()): ?>
+                            "minSearchLength": 100,<?php endif; ?>
                             "destinationSelector":"#search_autocomplete"}
-                        }'<?php endif; ?>
+                        }'
                         type="text"
                         name="<?php echo $helper->getQueryParamName() ?>"
                         value="<?php echo $helper->getEscapedQueryText() ?>"
