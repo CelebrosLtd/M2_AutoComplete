@@ -9,3 +9,5 @@ Celebros AutoComplete
 1.1.0 - compability with celebros autocomplete v3 added to plugin
 
 1.1.1 - 1.1.9 - technical fixes
+
+1.1.10 - php require version changed
