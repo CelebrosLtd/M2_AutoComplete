@@ -1,0 +1,24 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+/** @var $celHelper Celebros\AutoComplete\Helper\Data */
+$celHelper = $this->helper('Celebros\AutoComplete\Helper\Data');
+?>
+<?php if ($celHelper->isEnabled()): ?>
+<div id="searchSuggestions" class="ng-scope">
+    <div class="ng-scope" ng-view=""></div>
+</div>
+    <?php if ($cssUrl = $celHelper->getExternalCssUrl()): ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $celHelper->getProtocol() . '://' . $cssUrl ?>"/>
+    <?php else: ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoCompleteV6/Clients/<?php echo $celHelper->getCustomerName()?>/output/CelStylesAC.css"/>
+    <?php endif; ?>
+<script type="text/javascript">
+require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"], function () {
+    require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js"], function () {
+        require(["<?php echo $celHelper->getProtocol() ?>://<?php echo $celHelper->getScriptServerAddress() ?>/AutoCompleteV6/Clients/<?php echo $celHelper->getCustomerName()?>/output/CelScriptsAC.min.js"], function() {});
+    });
+});
+</script>
+<?php endif ?>
