@@ -13,3 +13,5 @@ Celebros AutoComplete
 1.1.10 - php require version changed
 
 1.2.0 - AC v6 added
+
+1.2.1 - default settings changed

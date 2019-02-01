@@ -16,9 +16,10 @@
         <celebros_autocomplete>
             <general>
                 <enabled>0</enabled>
-                <frontend_address></frontend_address>
-                <scriptserver_address></scriptserver_address>
-                <acversion>2</acversion>
+                <customer_name>MagEE230</customer_name>
+                <frontend_address>usdev-search.celebros.com</frontend_address>
+                <scriptserver_address>usdev-search.celebros.com</scriptserver_address>
+                <acversion>3</acversion>
                 <ext_css_enabled>0</ext_css_enabled>
                 <ext_css_url></ext_css_url>
             </general>
