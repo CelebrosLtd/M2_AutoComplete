@@ -15,3 +15,5 @@ Celebros AutoComplete
 1.2.0 - AC v6 added
 
 1.2.1 - default settings changed
+
+1.2.2 - tech fix
