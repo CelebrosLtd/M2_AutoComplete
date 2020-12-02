@@ -54,6 +54,24 @@
                         <field id="ext_css_enabled">1</field>
                     </depends>
                 </field>
+                <field id="use_customer_group" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Use Group In Customer Name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>     
+                <field id="customer_name_template" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Customer Name Template</label>
+                    <comment><![CDATA[Customer name as defined by Celebros]]></comment>
+                    <depends>
+                        <field id="use_customer_group">1</field>
+                    </depends>
+                </field>
+                <field id="allowed_customer_groups" translate="label" type="multiselect" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Allowed Customer Groups</label>
+                    <source_model>Celebros\AutoComplete\Model\Config\Source\CustomerGroups</source_model>
+                    <depends>
+                        <field id="use_customer_group">1</field>
+                    </depends>
+                </field>
             </group>
             <group id="about" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="1">
                 <label>About</label>

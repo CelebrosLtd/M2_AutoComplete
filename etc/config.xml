@@ -16,12 +16,14 @@
         <celebros_autocomplete>
             <general>
                 <enabled>0</enabled>
-                <customer_name>MagEE230</customer_name>
-                <frontend_address>usdev-search.celebros.com</frontend_address>
-                <scriptserver_address>usdev-search.celebros.com</scriptserver_address>
+                <customer_name>magedemo</customer_name>
+                <frontend_address>celebdev.celebros.com</frontend_address>
+                <scriptserver_address>celebdev.celebros.com</scriptserver_address>
                 <acversion>3</acversion>
                 <ext_css_enabled>0</ext_css_enabled>
                 <ext_css_url></ext_css_url>
+                <use_customer_group>0</use_customer_group>
+                <customer_name_template>{{customer_name}}-{{customer_group_code}}</customer_name_template>
             </general>
         </celebros_autocomplete>
     </default>
