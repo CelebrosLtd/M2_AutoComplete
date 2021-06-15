@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Celebros
  *
@@ -7,10 +8,10 @@
  * Do not edit or add to this file if you wish correct extension functionality.
  * If you wish to customize it, please contact Celebros.
  *
- ******************************************************************************
  * @category    Celebros
  * @package     Celebros_AutoComplete
  */
+
 namespace Celebros\AutoComplete\Helper;
 
 use \Magento\Store\Model\ScopeInterface;
@@ -28,17 +29,17 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     const XML_PATH_USE_CUSTOMER_GROUP      = 'celebros_autocomplete/general/use_customer_group';
     const XML_PATH_ALLOWED_CUSTOMER_GROUPS = 'celebros_autocomplete/general/allowed_customer_groups';
     const XML_PATH_CUSTOMER_NAME_TEMPLATE  = 'celebros_autocomplete/general/customer_name_template';
-    
+
     /**
      * @var \Magento\Customer\Model\Session
      */
     protected $_customerSession;
-    
+
     /**
      * @var \Celebros\AutoComplete\Model\Config\Source\Versions
      */
     protected $_versions;
-    
+
     /**
      * @param \Magento\Framework\App\Helper\Context $context
      * @param \Magento\Customer\Model\Session $customerSession
@@ -57,7 +58,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->_versions = $versions;
         parent::__construct($context);
     }
-    
+
     /**
      * Get current protocol
      * @return string
@@ -66,7 +67,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->_getRequest()->isSecure() ? 'https' : 'http';
     }
-    
+
     /**
      * Get current search query request
      * @return string
@@ -75,7 +76,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return self::QUERY_PARAM_NAME;
     }
-    
+
     /**
      * Check if module enabled
      * @return bool
@@ -88,7 +89,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function useCustomerGroup($store = null)
     {
         return (bool) $this->scopeConfig->isSetFlag(
@@ -97,7 +98,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function getCustomerName($store = null) : string
     {
         $custName = $this->scopeConfig->getValue(
@@ -127,7 +128,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         
         return $custName;
     }
-    
+
     public function renderCustomerName(string $custName, array $data) : string
     {
         foreach ($data as $key => $value) {
@@ -138,12 +139,12 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         
         return $this->sanitizeCustomerName($custName);
     }
-    
+
     public function sanitizeCustomerName(string $custName) : string
     {
         return str_replace(" ", "_", $custName);
     }
-    
+
     public function getAllowedCustomerGroups($store = null) : array
     {
         return explode(',', $this->scopeConfig->getValue(
@@ -152,7 +153,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         ));
     }
-    
+
     public function getCustomerNameTemplate($store = null) : string
     {
         return $this->scopeConfig->getValue(
@@ -161,7 +162,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function getFrontendServerAddress($store = null)
     {
         return $this->scopeConfig->getValue(
@@ -170,7 +171,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function getScriptServerAddress($store = null)
     {
         return $this->scopeConfig->getValue(
@@ -179,7 +180,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function getAcVersion($store = null)
     {
         $version = $this->scopeConfig->getValue(
@@ -190,12 +191,12 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         
         return (int)$version;
     }
-    
+
     public function getVersionTemplate($store = null)
     {
         return "Celebros_AutoComplete::search/form.mini/v" . $this->getAcVersion($store) .".phtml";
     }
-    
+
     public function isExternalCss($store = null)
     {
         return $this->scopeConfig->getValue(
@@ -204,7 +205,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store
         );
     }
-    
+
     public function getExternalCssUrl($store = null)
     {
         if ($this->isExternalCss($store)) {

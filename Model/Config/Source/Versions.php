@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Celebros
  *
@@ -7,10 +8,10 @@
  * Do not edit or add to this file if you wish correct extension functionality.
  * If you wish to customize it, please contact Celebros.
  *
- ******************************************************************************
  * @category    Celebros
  * @package     Celebros_AutoComplete
  */
+
 namespace Celebros\AutoComplete\Model\Config\Source;
 
 class Versions implements \Magento\Framework\Option\ArrayInterface
@@ -37,5 +38,4 @@ class Versions implements \Magento\Framework\Option\ArrayInterface
         }
         return $result;
     }
-
 }

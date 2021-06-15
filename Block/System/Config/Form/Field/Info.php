@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Celebros
  *
@@ -7,10 +8,10 @@
  * Do not edit or add to this file if you wish correct extension functionality.
  * If you wish to customize it, please contact Celebros.
  *
- ******************************************************************************
  * @category    Celebros
  * @package     Celebros_AutoComplete
  */
+
 namespace Celebros\AutoComplete\Block\System\Config\Form\Field;
 
 use Magento\Framework\Data\Form\Element\AbstractElement;
@@ -31,7 +32,8 @@ class Info extends \Magento\Config\Block\System\Config\Form\Field
     {
         $id = $element->getHtmlId();
         $html = '<tr id="row_' . $id . '">';
-        $html .= '<td class="label">' . __('Module Version') . '</td><td class="value">' . $this->getModuleVersion() . '</td><td class="scope-label"></td>';
+        $html .= '<td class="label">' . __('Module Version') . '</td><td class="value">'
+            . $this->getModuleVersion() . '</td><td class="scope-label"></td>';
         $html .= '</tr>';
        
         return $html;
@@ -41,5 +43,4 @@ class Info extends \Magento\Config\Block\System\Config\Form\Field
     {
         return $this->_moduleDb->getDbVersion(self::MODULE_NAME);
     }
-    
 }

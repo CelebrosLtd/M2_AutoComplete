@@ -19,3 +19,5 @@ Celebros AutoComplete
 1.2.2 - 1.2.3 - tech fix
 
 1.3.0 - php 7.4.x has been added to require dependency: customer group profile feature has been added
+
+1.3.1 - ui fixes && code refactoring
