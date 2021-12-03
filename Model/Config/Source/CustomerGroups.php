@@ -20,7 +20,7 @@ class CustomerGroups implements \Magento\Framework\Option\ArrayInterface
      * @var \Magento\Customer\Model\ResourceModel\Group\Collection
      */
     protected $_customerGroup;
-    
+
     /**
      * @param \Magento\Customer\Model\ResourceModel\Group\Collection $customerGroup
      */
@@ -29,7 +29,7 @@ class CustomerGroups implements \Magento\Framework\Option\ArrayInterface
     ) {
         $this->_customerGroup = $customerGroup;
     }
-    
+
     /**
      * Options getter
      *
@@ -46,6 +46,7 @@ class CustomerGroups implements \Magento\Framework\Option\ArrayInterface
                 ];
             }
         }
+
         return $result;
     }
 }

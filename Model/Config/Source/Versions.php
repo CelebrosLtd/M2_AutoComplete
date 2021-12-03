@@ -16,12 +16,21 @@ namespace Celebros\AutoComplete\Model\Config\Source;
 
 class Versions implements \Magento\Framework\Option\ArrayInterface
 {
-    public $versions = [
-        '2' => ['label' => 'V2'],
-        '3' => ['label' => 'V3'],
-        '6' => ['label' => 'V6']
-    ];
-    
+    /**
+     * @var array
+     */
+    public $versions = [];
+
+    /**
+     * @param array $versions
+     * @return void
+     */
+    public function __construct(
+        array $versions = []
+    ) {
+        $this->versions = $versions;
+    }
+
     /**
      * Options getter
      *
@@ -30,12 +39,13 @@ class Versions implements \Magento\Framework\Option\ArrayInterface
     public function toOptionArray()
     {
         $result = [];
-        foreach ($this->versions as $value => $version) {
+        foreach ($this->versions as $value => $label) {
             $result[] = [
                 'value' => $value,
-                'label' => $version['label']
+                'label' => $label
             ];
         }
+
         return $result;
     }
 }
