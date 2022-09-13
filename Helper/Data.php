@@ -121,7 +121,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return (int)$this->_customerSession->getCustomer()->getGroupId();
     }
-    
+
     /**
      * @param int $store
      * @return string
@@ -133,7 +133,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             ScopeInterface::SCOPE_STORE,
             $store
         );
-           
+
         if ($this->useCustomerGroup($store)
         && ($customerGroupId = $this->getCurrentCustomerGroupId())) {
             if (in_array($customerGroupId, $this->getAllowedCustomerGroups($store))) {
@@ -144,7 +144,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                     'customer_group_id' => $customerGroupId,
                     'customer_group_code' => $customerGroupCode
                 ];
-                
+
                 $custName = $this->renderCustomerName(
                     $this->getCustomerNameTemplate($store),
                     $data
@@ -157,7 +157,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * @param string $custName
-     * @param array $data    
+     * @param array $data
      * @return string
      */
     public function renderCustomerName(
@@ -188,7 +188,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getAllowedCustomerGroups($store = null): array
     {
-        return explode(',', $this->scopeConfig->getValue(
+        return explode(',', (string)$this->scopeConfig->getValue(
             self::XML_PATH_ALLOWED_CUSTOMER_GROUPS,
             ScopeInterface::SCOPE_STORE,
             $store
@@ -245,7 +245,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             ScopeInterface::SCOPE_STORE,
             $store
         );
-        
+
         return (int)$version;
     }
 
