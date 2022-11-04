@@ -1,15 +1,12 @@
 <?php
 
-/*
- * Celebros
+/**
+ * Celebros (C) 2022. All Rights Reserved.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish correct extension functionality.
  * If you wish to customize it, please contact Celebros.
- *
- * @category    Celebros
- * @package     Celebros_AutoComplete
  */
 
 namespace Celebros\AutoComplete\Plugin\Magento\Search\Helper;
@@ -20,7 +17,7 @@ use Celebros\AutoComplete\Helper\Data as Helper;
 class Data
 {
     public const INF_MIN_LENGHT = 99999;
-    
+
     /**
      * @param Helper $helper
      * @return void
@@ -30,7 +27,7 @@ class Data
     ) {
         $this->helper = $helper;
     }
-    
+
     /**
      * @param Subj $subj
      * @param int|string $result
@@ -43,7 +40,7 @@ class Data
         if ($this->helper->isEnabled()) {
             return null;
         }
-        
+
         return $result;
     }
 }

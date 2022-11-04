@@ -1,4 +1,13 @@
-#searchSuggestions 
+/*
+ * Celebros (C) 2022. All Rights Reserved.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish correct extension functionality.
+ * If you wish to customize it, please contact Celebros.
+ */
+
+#searchSuggestions
 {
     background: #FFF;
     border: 1px solid #ddd;
@@ -35,7 +44,7 @@
 }
 
 #searchSuggestions .topProducts ul {
-    
+
 }
 
 #searchSuggestions ul li {
@@ -121,7 +130,7 @@
 
 #searchSuggestions .topSearch {
     float: left;
-    
+
     15px: 0
     width: 290px;
     min-height: 180px;
@@ -184,7 +193,7 @@
 }
 
 .ellipsis {
-    
+
 }
 
 /* Custom Client CSS changes */
@@ -193,7 +202,7 @@
     border-radius: 14px !important;
 	-moz-border-radius: 14px !important;
 	-webkit-border-radius: 14px !important;
-	
+
 }
 
 .searchMiniForm #search
@@ -265,7 +274,7 @@
 	float: left;
 	width: 78%;
 }
-	
+
 #searchSuggestions .topProducts .productImage {
 	height: 90px !important;
 	width: 20%;

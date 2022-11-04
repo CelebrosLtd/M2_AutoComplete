@@ -1,16 +1,14 @@
 <?xml version="1.0"?>
 <!--
- * Celebros
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish correct extension functionality.
- * If you wish to customize it, please contact Celebros.
- *
- ******************************************************************************
- * @category    Celebros
- * @package     Celebros_AutoComplete
--->
+  /**
+   * Celebros (C) 2022. All Rights Reserved.
+   *
+   * DISCLAIMER
+   *
+   * Do not edit or add to this file if you wish correct extension functionality.
+   * If you wish to customize it, please contact Celebros.
+   */
+  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="celebros" translate="label" sortOrder="200000" class="celebros-tab">
@@ -57,7 +55,7 @@
                 <field id="use_customer_group" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Use Group In Customer Name</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>     
+                </field>
                 <field id="customer_name_template" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Customer Name Template</label>
                     <comment><![CDATA[Customer name as defined by Celebros]]></comment>
