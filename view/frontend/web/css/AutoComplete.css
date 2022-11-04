@@ -1,17 +1,13 @@
-/**
- * Celebros
+/*
+ * Celebros (C) 2022. All Rights Reserved.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish correct extension functionality.
  * If you wish to customize it, please contact Celebros.
- *
- ******************************************************************************
- * @category    Celebros
- * @package     Celebros_AutoComplete
  */
 #divSuggestions /* the div that will be placed next to the search box */
-{	
+{
 	position:absolute; /* the div's position will be set by placing it next to the search box */
 	z-index:9050; /* z-index for the div */
 	font-family:Verdana; /* font for the suggestions */
@@ -61,10 +57,10 @@
 {
 	margin-left: 4px;
 	margin-right: 4px;
-	margin-bottom: 1px;	
+	margin-bottom: 1px;
 	background-color:CornflowerBlue;/* background color for the suggestion's heder, ie: Queries, Products */
 	font-size:8pt; /* font size for the headers */
-	color:#00256A; /* color for the font */	
+	color:#00256A; /* color for the font */
 	line-height:13pt; /* ling height for the headers */
 }
 #divSuggestions li.yui-ac-highlight /* highlighted suggestion */
