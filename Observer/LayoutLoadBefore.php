@@ -15,24 +15,28 @@ use Magento\Framework\Event\ObserverInterface;
 
 class LayoutLoadBefore implements ObserverInterface
 {
-    const VERSION_HADLE_PREFIX = 'celebros_ac_v';
+    public const VERSION_HADLE_PREFIX = 'celebros_ac_v';
 
     /**
-     * Https request
-     *
-     * @var \Zend\Http\Request
+     * @var \Magento\Framework\View\LayoutInterface
      */
-    protected $_request;
-    protected $_helper;
-    protected $_layout;
+    protected $layout;
 
+    /**
+     * @var \Celebros\AutoComplete\Helper\Data
+     */
+    protected $helper;
+
+    /**
+     * @param \Magento\Framework\View\LayoutInterface $layout
+     * @param \Celebros\AutoComplete\Helper\Data $helper
+     */
     public function __construct(
-        \Magento\Framework\View\Element\Context $context,
-        \Celebros\AutoComplete\Helper\Data $celHelper
+        \Magento\Framework\View\LayoutInterface $layout,
+        \Celebros\AutoComplete\Helper\Data $helper
     ) {
-        $this->_layout = $context->getLayout();
-        $this->_request = $context->getRequest();
-        $this->_helper = $celHelper;
+        $this->layout = $layout;
+        $this->helper = $helper;
     }
 
     /**
@@ -41,9 +45,9 @@ class LayoutLoadBefore implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        if ($this->_helper->isEnabled() && !$this->_helper->getExternalCssUrl()) {
-            $version = $this->_helper->getAcVersion();
-            $this->_layout->getUpdate()->addHandle(self::VERSION_HADLE_PREFIX . $version);
+        if ($this->helper->isEnabled() && !$this->helper->getExternalCssUrl()) {
+            $version = $this->helper->getAcVersion();
+            $this->layout->getUpdate()->addHandle(self::VERSION_HADLE_PREFIX . $version);
         }
 
         return $this;
