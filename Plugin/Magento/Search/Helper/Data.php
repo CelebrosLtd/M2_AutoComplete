@@ -16,11 +16,15 @@ use Celebros\AutoComplete\Helper\Data as Helper;
 
 class Data
 {
+    /**
+     * @var Helper
+     */
+    private $helper;
+
     public const INF_MIN_LENGHT = 99999;
 
     /**
      * @param Helper $helper
-     * @return void
      */
     public function __construct(
         Helper $helper
@@ -29,14 +33,14 @@ class Data
     }
 
     /**
+     * Retrieve suggest url
+     *
      * @param Subj $subj
      * @param int|string $result
      * @return null|string
      */
-    public function afterGetSuggestUrl(
-        Subj $subj,
-        $result
-    ) {
+    public function afterGetSuggestUrl(Subj $subj, $result)
+    {
         if ($this->helper->isEnabled()) {
             return null;
         }
