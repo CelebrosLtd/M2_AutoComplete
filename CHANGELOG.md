@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.4
+### UPDATES
+
+- Add Magento 2.4.6 and PHP 8.2 compatibility
+- fix: Add missing dynamic properties PHP 8.2
+- fix: replace Zend_HTTP with laminas-http
+
 ## 1.3.3
 
 ### UPDATES
