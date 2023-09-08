@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.3.5
+### FIXES
+
+- fix: add php8.2 constraint in composer.json
+
 ## 1.3.4
 ### UPDATES
 
