@@ -24,8 +24,8 @@ $celHelper = $this->helper(\Celebros\AutoComplete\Helper\Data::class);
 <link rel="stylesheet" type="text/css" media="all" href="<?= $block->escapeHtml($celHelper->getProtocol()) ?>://<?= $block->escapeUrl($celHelper->getScriptServerAddress()) ?>/AutoCompleteV6/Clients/<?= $block->escapeHtml($celHelper->getCustomerName()) ?>/output/CelStylesAC.css"/>
     <?php endif; ?>
 <script type="text/javascript">
-require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"], function () {
-    require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js"], function () {
+require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"], function () {
+    require(["https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"], function () {
         require(["<?= $block->escapeHtml($celHelper->getProtocol()) ?>://<?= $block->escapeUrl($celHelper->getScriptServerAddress()) ?>/AutoCompleteV6/Clients/<?= $block->escapeHtml($celHelper->getCustomerName()) ?>/output/CelScriptsAC.js"], function() {});
     });
 });
