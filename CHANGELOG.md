@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.4.0
+### UPDATES
+- feat: update Angular version 1.6.3 > 1.8.3
+
 ## 1.3.5
 ### FIXES
 
